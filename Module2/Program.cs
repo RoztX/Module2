@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Module2;
+using Autofac;
+
+var config = new Config();
+var container = config.RegistrarDependency();
+var starter = container.Resolve<Starter>();
+starter.Run();
